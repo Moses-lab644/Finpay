@@ -12,7 +12,7 @@ function Transactions() {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "http://localhost:5000/api/wallet/transactions",
+        "https://finpay-4.onrender.com/api/wallet/transactions",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -31,10 +31,10 @@ function Transactions() {
     fetchTransactions();
   }, []);
 
-  // 🔥 GET CURRENT USER EMAIL FROM TOKEN (optional improvement later)
+  //  GET CURRENT USER EMAIL FROM TOKEN (optional improvement later)
   const userEmail = localStorage.getItem("email");
 
-  // 🔥 FORMAT DATA
+  //  FORMAT DATA
   const formattedTransactions = transactions.map((t) => {
     const isSender = t.sender_email === userEmail;
 

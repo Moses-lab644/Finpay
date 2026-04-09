@@ -15,7 +15,7 @@ function Wallet() {
       }
 
       const res = await axios.get(
-        "http://localhost:5000/api/wallet",
+        "https://finpay-4.onrender.com/api/wallet",
         {
           headers: {
             Authorization: `Bearer ${token}`,

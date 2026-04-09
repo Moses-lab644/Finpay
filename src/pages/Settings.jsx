@@ -43,7 +43,7 @@ function Settings() {
 
     try {
       const res = await axios.put(
-        "http://localhost:5000/api/user/profile",
+        "https://finpay-4.onrender.com/api/user/profile",
         { name },
         {
           headers: { Authorization: `Bearer ${token}` },
