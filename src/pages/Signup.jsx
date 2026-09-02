@@ -23,7 +23,7 @@ function Signup() {
     e.preventDefault();
 
     try {
-      const res = await fetch("https://finpay-4.onrender.com/api/auth/signup", {
+      const res = await fetch("http://finpay-4.onrender.com/api/user/profile", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
