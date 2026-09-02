@@ -18,7 +18,7 @@ function Settings() {
   const fetchProfile = async () => {
     try {
       const res = await axios.get(
-        "http://finpay-4.onrender.com/api/user/profile",
+        "https://finpay-5.onrender.com",
         {
           headers: { Authorization: `Bearer ${token}` },
         }

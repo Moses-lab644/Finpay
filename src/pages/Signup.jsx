@@ -22,14 +22,14 @@ function Signup() {
   const handleSignup = async (e) => {
     e.preventDefault();
 
-    try {
-      const res = await fetch("http://finpay-4.onrender.com/api/user/profile", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(form)
-      });
+try {
+  const res = await fetch("https://onrender.com", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(form)
+  });
 
       const data = await res.json();
 

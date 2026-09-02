@@ -21,7 +21,7 @@ function Login() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://finpay-4.onrender.com/api/user/profile", {
+      const response = await fetch("https://finpay-5.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
