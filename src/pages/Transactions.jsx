@@ -12,7 +12,7 @@ function Transactions() {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "https://finpay-4.onrender.com/api/wallet/transactions",
+        "https://finpay-5.onrender.com",
         {
           headers: {
             Authorization: `Bearer ${token}`,

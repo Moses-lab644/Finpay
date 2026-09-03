@@ -14,17 +14,16 @@ function Wallet() {
         return;
       }
 
-      const res = await axios.get(
-        "https://finpay-4.onrender.com/api/wallet",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      // Fixed: Cleaned out the broken text mix-up inside the URL parenthesis
+      const res = await axios.get("https://onrender.com", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       console.log("Wallet:", res.data);
-      setWallet(res.data.wallet);
+      // Ensure this matches the exact key your backend wallet controller returns
+      setWallet(res.data.wallet || res.data);
 
     } catch (err) {
       console.error("Error fetching wallet:", err);
@@ -34,48 +33,6 @@ function Wallet() {
   useEffect(() => {
     fetchWallet();
   }, []);
-
-  return (
-    <div style={styles.container}>
-      
-      {/* Header */}
-      <header style={styles.header}>
-        <h1 style={styles.title}>FinPay Wallet</h1>
-        <nav>
-          <Link to="/dashboard" style={styles.navLink}>Dashboard</Link>
-          <Link to="/send" style={styles.navLink}>Send Money</Link>
-        </nav>
-      </header>
-
-      {/* Main content */}
-      <main style={styles.main}>
-
-        {/* Wallet Card */}
-        <div style={styles.walletCard}>
-          <h2 style={styles.balanceTitle}>Current Balance</h2>
-
-          {/* SAFE RENDER */}
-          <p style={styles.balanceAmount}>
-            ₦{wallet?.balance || "0.00"}
-          </p>
-
-          <div style={styles.actionButtons}>
-            <Link to="/send" style={styles.primaryButton}>Send</Link>
-            <Link to="/receive" style={styles.secondaryButton}>Receive</Link>
-          </div>
-        </div>
-
-        {/* Transactions */}
-        <div style={styles.transactionContainer}>
-          <h3 style={styles.transactionTitle}>Recent Transactions</h3>
-          <p>No transactions yet</p>
-        </div>
-
-      </main>
-
-    </div>
-  );
-}
 
 const styles = {
   container: {

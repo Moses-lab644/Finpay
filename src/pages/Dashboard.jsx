@@ -13,7 +13,7 @@ function Dashboard() {
   // FETCH WALLET
   const fetchWallet = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/wallet", {
+      const res = await axios.get("https://finpay-5.onrender.com", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setWallet(res.data.wallet);
@@ -26,7 +26,7 @@ function Dashboard() {
   const fetchTransactions = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/wallet/transactions",
+        "https://finpay-5.onrender.com",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
