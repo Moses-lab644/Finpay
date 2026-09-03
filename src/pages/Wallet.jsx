@@ -15,7 +15,7 @@ function Wallet() {
       }
 
       // Fixed: Cleaned out the broken text mix-up inside the URL parenthesis
-      const res = await axios.get("https://onrender.com", {
+      const res = await axios.get("https://finpay-4.onrender.com/wallet", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
